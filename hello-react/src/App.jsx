@@ -1,32 +1,29 @@
-
 import './App.css'
 import TaskCard from './TaskCard'
 
 function App() {
-
   return (
-    <>
-      <h1 className="font-bold text-left">Smarter Tasks</h1>
-      <br></br>
-      <p className="text-left">Project: Graduation Final Year Project(Revamp Collage Website)</p>
-      <br></br>
-      <div className='flex justify-around space-x-4'>
-        <div className='p-[50px] rounded-[5px] border-2 border-solid border-[white] w-[500px] '>
-          <h2 className="font-bold">Pending</h2>
-          <br></br>
-          <TaskCard title="Build the website with static content" date="10th April" name="Rohit S" loc="left"/>
-          <TaskCard title="Add a blog" date="22nd March" name="Rohit M" loc="left"/>
-          <p>+ New task</p>
+    <div className="p-8">
+      <h1 className="font-bold text-2xl mb-4">Smarter Tasks</h1>
+      <p className="text-base mb-6">Project: Graduation Final Year Project (Revamp College Website)</p>
+      <div className='flex justify-between'>
+        <div className='rounded-lg border border-gray-300 p-4 w-[500px] bg-white shadow-lg'>
+          <p className='font-bold text-lg mb-4 text-black'>Pending</p>
+          <ul>
+            <li><TaskCard title="Build the website with static content" dueDate="10th April" completedAtDate="None" assigneeName="Rohit S" /></li>
+            <li><TaskCard title="Add a blog" dueDate="22nd March" completedAtDate="None" assigneeName="Rohit M" /></li>
+            <li className="text-gray-500">+ New task</li>
+          </ul>
         </div>
-        <div className='p-[50px] rounded-[5px] border-2 border-solid border-[white] w-[500px]'>
-          <h2 className="font-bold">Done</h2>
-          <br></br>
-          <TaskCard title="Design the mockup" date="10th April" name="Rohit M" loc="right"/>
-          <TaskCard title="Get the approval from principal" date="20th April" name="Ajay S" loc="right"/>
+        <div className='rounded-lg border border-gray-300 p-4 w-[500px] bg-white shadow-lg'>
+          <p className='font-bold text-lg mb-4 text-black'>Done</p>
+          <ul>
+            <li><TaskCard title="Design the mockup" dueDate="None" completedAtDate="10th April" assigneeName="Rohit M" /></li>
+            <li><TaskCard title="Get the approval from principal" dueDate="None" completedAtDate="20th April" assigneeName="Ajay S" /></li>
+          </ul>
         </div>
       </div>
-
-    </>
+    </div>
   )
 }
 
