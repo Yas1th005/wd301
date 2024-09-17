@@ -4,10 +4,10 @@ import React from 'react';
 const TaskCard = (props) => {
     return (
         <>
-            {props.completedAtDate=="None" ? (
+            {props.completedAtDate== null ? (
                 <div className='TaskItem'>
                     <h2 className="text-xl font-bold">{props.title}</h2>
-                    <p className="text-sm">Completed on: {props.dueDate}</p>
+                    <p className="text-sm">Due on: {props.dueDate}</p>
                     <p className="text-sm">Assignee: {props.assigneeName}</p>
                 </div>
             ) : (

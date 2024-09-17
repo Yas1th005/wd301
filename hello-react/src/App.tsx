@@ -10,8 +10,8 @@ function App() {
       <div  className="flex space-around gap-[10px]">
         <div className="border white p-[10px]">
           <h1>Pending</h1>
-          <TaskCard title="Build the website with static content" completedAtDate="None" dueDate="10th April" assigneeName="Rohit S"/>
-          <TaskCard title="Build the website with static content" completedAtDate="None" dueDate="22nd March" assigneeName="Rohit M"/>
+          <TaskCard title="Build the website with static content" dueDate="10th April" assigneeName="Rohit S"/>
+          <TaskCard title="Add a blog" dueDate="22nd March" assigneeName="Rohit M"/>
           <p>+New Task</p>
         </div>
         <div className="border white p-[10px]">
