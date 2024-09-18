@@ -1,6 +1,7 @@
 [build]
-  command = "npm run build"  # Ensure this matches your build command
-  publish = "build"          # The directory where your built files are output (default is 'build' for React)
+  publish = "dist"
+  command = "npm run build"
+
 
 [[redirects]]
   from = "/*"
