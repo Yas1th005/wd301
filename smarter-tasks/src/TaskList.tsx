@@ -1,22 +1,30 @@
-import React from "react";
+
 import { TaskItem } from "./types";
 import "./TaskCard.css"
-interface TaskListProps {
+import Task from "./Task";
+interface Props {
   tasks: TaskItem[];
+  deleteTask: (index: number) => void;
 }
-
-const TaskList: React.FC<TaskListProps> = ({ tasks }) => {
-  return (
-    <ul>
-      {tasks.map((task, index) => (
-        <li key={index} className="TaskItem">
-          <h3>{task.title}</h3>
-          {task.description && <p>{task.description}</p>}
-          <p>Due: {task.dueDate}</p>
-        </li>
-      ))}
-    </ul>
-  );
+const TaskList = (props: Props) => {
+  const list = props.tasks.map((task, idx) => (
+    <li key={idx} className="task-item">
+      <Task
+        title={task.title}
+        description={task.description}
+        dueDate={task.dueDate}
+      />
+      <button
+        className="deleteTaskButton"
+        onClick={() => props.deleteTask(idx)}
+      >
+        Delete
+      </button>
+    </li>
+  ));
+  return <ul>{list}</ul>;
 };
 
 export default TaskList;
+
+
