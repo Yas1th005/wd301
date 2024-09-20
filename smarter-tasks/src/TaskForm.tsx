@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useRef} from "react";
 import { TaskItem } from "./types";
 
 interface TaskFormProps {
@@ -10,6 +10,12 @@ interface TaskFormState {
     dueDate: string;
   }
 
+
+
+const generateUniqueId = () => {
+  return Date.now().toString(36) + Math.random().toString(36).substr(2);
+};
+  
 
 const TaskForm=(props:TaskFormProps)=>{
 const [formState,setFormState]=React.useState<TaskFormState>({
@@ -38,9 +44,14 @@ const addTask: React.FormEventHandler<HTMLFormElement> = (event) => {
   if (formState.title.length === 0 || formState.dueDate.length === 0) {
     return;
   }
-  props.addTask(formState);
-  setFormState({ title: "", description: "", dueDate: "" });
+  const newTask = { ...formState, id: idRef.current };
+
+  props.addTask(newTask);
+  setFormState({title: "", description: "", dueDate: "" });
+  idRef.current=generateUniqueId();
 };
+
+const idRef = useRef(generateUniqueId());
 
 return (
   <form onSubmit={addTask}>
