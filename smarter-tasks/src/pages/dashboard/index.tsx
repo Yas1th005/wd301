@@ -30,7 +30,7 @@ const Dashboard: React.FC = () => {
         ) : (
           <p>No user data available</p>
         )}
-        <Link to={'/signin'} id='logout-link' onClick={close}>Logout</Link>
+        <Link to={'/signup'} id='logout-link' onClick={close}>Logout</Link>
 
       </div>
     </div>
